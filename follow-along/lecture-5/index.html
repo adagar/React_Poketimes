@@ -12,6 +12,10 @@
 	<script type="text/babel">
 		//we have this access from the cdn pulling in
 		class App extends React.Component {
+			state = {
+				name: "nick",
+				age: 30
+			}
 			//you  MUST have at least this render function
 			render() {
 				return (
@@ -24,7 +28,7 @@
 							{
 								//put this in curly braces to indicate its dynamic javascript
 							}
-							{ Math.random() * 10 } 
+							<p>My name is: { this.state.name } and I am {this.state.age} years old.</p>
 						</p>
 					</div>
 				)
