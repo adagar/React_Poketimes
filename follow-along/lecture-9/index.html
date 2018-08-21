@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<title>First React</title>
+</head>
+<body>
+	<div id="app"></div>
+	<script type="text/babel">
+		//we have this access from the cdn pulling in
+		class App extends React.Component {
+			state = {
+				name: "nick",
+				age: 30
+			}
+			handleChange = (e) => {
+				this.setState({
+					name: e.target.value
+				})
+			}
+
+			handleSubmit = (e) => {
+				e.preventDefault(); //this will stop default behavior of refreshing page
+				console.log('Form submitted', this.state.name)
+			}
+			//you  MUST have at least this render function
+			render() {
+				return (
+					//jsx is a way to write html code IN javascript
+					//try to give ONE root element at the top. If you wanted more div, put them all in one div
+					//you can't use class in here, its reserved by javascript
+					<div className="app-content"> 
+						<h1>Hey, ninjas!</h1>
+						<div>
+							{
+								//put this in curly braces to indicate its dynamic javascript
+							}
+							<p>My name is: { this.state.name } and I am {this.state.age} years old.</p>
+						</div>
+						<form onSubmit = { this.handleSubmit }>
+							<input type = "text" onChange={ this.handleChange }/>
+							<button>Submit</button>
+						</form>
+					</div>
+				)
+			}
+		}
+		ReactDOM.render(<App />, document.getElementById('app')); //render argument 1 at argument 2
+	</script>
+</body>
+</html>
