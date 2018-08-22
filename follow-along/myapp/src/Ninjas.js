@@ -22,31 +22,19 @@ const Ninjas = ({ ninjas }) => {
         // }
         //)}
         //with a ternary
-        // const ninjaList = ninjas.map(ninja => {
-        //     //condition ? (iftrue) : (iffalse)
-        //     return ninja.age > 20 ? (
-        //         <div className="ninja" key = { ninja.id }>
-        //              <div>Name: { ninja.name }</div>
-        //              <div>Age: { ninja.age }</div>
-        //              <div>Belt: { ninja.belt }</div>
-        //         </div>
-        //     ) : null
-        // });
+        const ninjaList = ninjas.map(ninja => {
+            //condition ? (iftrue) : (iffalse)
+            return ninja.age > 20 ? (
+                <div className="ninja" key = { ninja.id }>
+                     <div>Name: { ninja.name }</div>
+                     <div>Age: { ninja.age }</div>
+                     <div>Belt: { ninja.belt }</div>
+                </div>
+            ) : null
+        });
     return(
         <div className="ninja-list">
-            {
-                //can take that condition above and just put it together and send it out here
-                ninjas.map(ninja => {
-                //condition ? (iftrue) : (iffalse)
-                    return ninja.age > 20 ? (
-                        <div className="ninja" key = { ninja.id }>
-                            <div>Name: { ninja.name }</div>
-                            <div>Age: { ninja.age }</div>
-                            <div>Belt: { ninja.belt }</div>
-                        </div>
-                    ) : null
-                })
-            }
+            { ninjaList }
         </div>
     )
 }
