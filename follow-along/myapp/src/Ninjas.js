@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './Ninjas.css'
 
 //props automatically passes as a component
 //const Ninjas = (props) => {
 //instead of destructuring
-const Ninjas = ({ ninjas }) => {
+const Ninjas = ({ ninjas, deleteNinja }) => {
     //console.log(this.props)
     //as a UI component, this doesn't need a state/class
     //const { ninjas } = props; //because we have the { ninjas } up top, we're destructing the prop into ninjas there
@@ -29,6 +30,7 @@ const Ninjas = ({ ninjas }) => {
                      <div>Name: { ninja.name }</div>
                      <div>Age: { ninja.age }</div>
                      <div>Belt: { ninja.belt }</div>
+                     <button onClick ={() => {deleteNinja(ninja.id) }}>Delete ninja</button>
                 </div>
             ) : null
         });
