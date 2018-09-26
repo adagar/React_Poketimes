@@ -1,1 +1,3 @@
-# net-ninja
+A first encounter with ReactJS
+-Components
+-Routes
